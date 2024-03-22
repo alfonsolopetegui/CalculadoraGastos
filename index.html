@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Gastos</h1>
+    <form id="expenseForm">
+        <input type="text" name="expenseName" id="expenseName" placeholder="gasto">
+        <input type="text" name="expenseAmount" id="expenseAmount" placeholder="valor">
+        <select name="category" id="categorySelect" required>
+            <option value="default" selected disabled>Seleccionar categoría</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Ocio">Ocio</option>
+            <option value="Inversion">Inversion</option>
+        </select>
+        <button>Agregar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de gasto</th>
+                <th>Valor</th>
+                <th>Categoría</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="expensesList">
+
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
