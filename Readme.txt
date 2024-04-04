@@ -12,7 +12,11 @@ Paginación: Navegar a través de los gastos paginados.
 Instalación
 Clona este repositorio en tu máquina local.
 
-git clone https://github.com/tu_usuario/calculadora-gastos.git
+git clone https://github.com/alfonsolopetegui/CalculadoraGastos.git
+
+instala TypeScript: npm install -g typescript
+
+compila a JS: tsc app.ts -w
 
 Abre el archivo index.html en tu navegador web.
 
