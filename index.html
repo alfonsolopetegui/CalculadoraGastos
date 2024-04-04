@@ -1,39 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Calculadora de Gastos</h1>
-    <form id="expenseForm">
-        <input type="text" name="expenseName" id="expenseName" placeholder="gasto">
-        <input type="text" name="expenseAmount" id="expenseAmount" placeholder="valor">
-        <select name="category" id="categorySelect" required>
-            <option value="default" selected disabled>Seleccionar categoría</option>
-            <option value="Alimentos">Alimentos</option>
-            <option value="Transporte">Transporte</option>
-            <option value="Ocio">Ocio</option>
-            <option value="Inversion">Inversion</option>
-        </select>
-        <button>Agregar</button>
-    </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
-    <table>
-        <thead>
+    <title>Calculadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="title">Calculadora de Gastos</h1>
+    <div class="controls">
+      <div class="form-container">
+        <form id="expenseForm" class="expense-form">
+          <h2 class="form-title">Ingresar gasto</h2>
+          <div class="input-container">
+            <input
+              type="text"
+              name="expenseName"
+              id="expenseName"
+              placeholder="gasto"
+            />
+            <input
+              type="text"
+              name="expenseAmount"
+              id="expenseAmount"
+              placeholder="valor"
+            />
+            <select name="category" id="categorySelect" required>
+              <option value="default" selected disabled>
+                Seleccionar categoría
+              </option>
+              <option value="Alimentos">Alimentos</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Ocio">Ocio</option>
+              <option value="Inversion">Inversion</option>
+              <option value="Servicios">Servicios</option>
+              <option value="Alquileres">Alquileres</option>
+              <option value="Varios">Varios</option>
+            </select>
+          </div>
+          <div class="category-btn-container">
+            <button class="btn">Agregar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="filter-container">
+        <section id="filterSection" class="filter-section">
+          <h2 class="filter-title">Filtros de busqueda</h2>
+          <div class="date-container">
+            <label for="startDate"
+              >Desde
+              <input type="date" id="startDate" />
+            </label>
+            <label for="endDate"
+              >Hasta
+              <input type="date" id="endDate" />
+            </label>
+            <label for="categoryFilter"
+              >Categoría
+              <select id="categoryFilter">
+                <option value="all" selected>Todas</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Ocio">Ocio</option>
+                <option value="Inversion">Inversion</option>
+                <option value="Servicios">Servicios</option>
+                <option value="Alquileres">Alquileres</option>
+                <option value="Varios">Varios</option>
+              </select>
+            </label>
+          </div>
+          <div class="category-btn-container">
+            <button id="filterBtn" class="btn">Aplicar filtro</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="views">
+      <div class="table-container">
+        <table class="table">
+          <thead>
             <tr>
-                <th>Tipo de gasto</th>
-                <th>Valor</th>
-                <th>Categoría</th>
-                <th>Fecha</th>
+              <th>Tipo de gasto</th>
+              <th>Valor</th>
+              <th>Categoría</th>
+              <th>Fecha</th>
             </tr>
-        </thead>
-        <tbody id="expensesList">
+          </thead>
 
-        </tbody>
-    </table>
+          <!-- aca se renderizan los gastos -->
+          <tbody id="expensesList"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total</td>
+              <td id="total">$0</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- paginacion -->
+        <div id="pagination" class="pagination"></div>
+      </div>
+
+      <div class="chart-container">
+        <div class="ct-chart"></div>
+        <div class="legend"></div>
+      </div>
+    </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

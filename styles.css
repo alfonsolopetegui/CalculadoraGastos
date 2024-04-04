@@ -1,0 +1,252 @@
+body {
+  background: url("./public/fondoApp.jpg");
+  font-family: "Oxygen", sans-serif;
+}
+.title {
+  width: 100%;
+  /* text-align: center; */
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Six Caps", sans-serif;
+  font-size: 50px;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  background-color: rgba(234, 46, 234, 0.071);
+  height: 27vh;
+  margin-bottom: 4vh;
+}
+.form-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.expense-form {
+  width: 90%;
+  height: 90%;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgba(250, 48, 250, 0.066); */
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  /* font-family: comfortaa; */
+  color: white;
+  /* width: 50%; */
+}
+
+.form-title {
+  width: 100%;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+.expense-form input {
+  border: 1px solid grey;
+  /* width: 100%; */
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.expense-form select {
+  padding: 8px 15px 8px 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.select-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 40%;
+  height: 34px;
+  padding: 5px 20px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(225, 12, 154, 0.283);
+  color: white;
+  cursor: pointer;
+}
+
+.filter-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filter-section {
+  width: 90%;
+  height: 90%;
+  /* background-color: rgba(250, 48, 250, 0.066); */
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  /* font-family: comfortaa; */
+  color: white;
+  /* width: 50%; */
+}
+
+.filter-title {
+  width: 100%;
+  text-align: center;
+}
+.date-container {
+  display: flex;
+  justify-content: space-around;
+}
+#startDate,
+#endDate {
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.category-btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#categoryFilter {
+  padding: 8px;
+}
+.views {
+  display: flex;
+  height: 40vh;
+}
+
+/* estilos de la tabla */
+
+.table-container {
+  width: 60%;
+  height: 400px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  /* height: 360px; */
+}
+
+thead tr {
+  background-color: rgb(75, 10, 122);
+  height: 30px;
+}
+
+tbody {
+  height: min-content;
+}
+
+th {
+  text-align: start;
+  color: white;
+}
+
+.row-element {
+  height: 30px;
+  color: white;
+}
+
+.row-element:nth-child(even) {
+  background-color: rgba(238, 130, 238, 0.043);
+}
+
+.row-element:nth-child(odd) {
+  background-color: rgba(181, 56, 223, 0.144);
+}
+
+.empty-row {
+  height: 30px;
+  background: rgba(208, 6, 208, 0.281);
+}
+
+tfoot tr {
+  height: 30px;
+  background-color: rgb(75, 10, 122);
+}
+
+tfoot td {
+  text-align: start;
+  padding: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+/* estilos para la paginacion */
+.pagination {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pageBtn {
+  width: 20px;
+  height: 20px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active {
+  border: solid 3px white;
+}
+
+/* Estilos para la leyenda */
+.chart-container {
+  background-color: rgba(212, 30, 244, 0.082);
+  width: 40%;
+  height: 360px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+/* Estilos para el gráfico de pastel */
+.ct-chart {
+  max-width: 300px;
+  height: auto; /* Para mantener la relación de aspecto */
+}
