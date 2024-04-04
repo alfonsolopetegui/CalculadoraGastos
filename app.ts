@@ -67,7 +67,7 @@ function renderChart(expenses: Expense[]) {
 
   const chartData = {
     labels: Object.keys(categoryTotals),
-    series: Object.values(categoryTotals),
+    series: Object.keys(categoryTotals).map((key) => categoryTotals[key]),
   };
 
   const defaultColors = [
@@ -227,7 +227,6 @@ function deleteExpense(event: MouseEvent) {
   localStorage.setItem("expensesList", JSON.stringify(expensesList));
   loadExpenses();
 }
-
 
 function createExpenseRow(expense: Expense): HTMLTableRowElement {
   const row = document.createElement("tr");

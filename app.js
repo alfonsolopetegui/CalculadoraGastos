@@ -50,7 +50,7 @@ function renderChart(expenses) {
     });
     var chartData = {
         labels: Object.keys(categoryTotals),
-        series: Object.values(categoryTotals),
+        series: Object.keys(categoryTotals).map(function (key) { return categoryTotals[key]; }),
     };
     var defaultColors = [
         "#ff0000",
